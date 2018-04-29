@@ -6,15 +6,20 @@ from pymongo import MongoClient
 import os
 
 app = Flask(__name__)
+# 
+# mongodb://<dbuser>:<dbpassword>@ds261479.mlab.com:61479/grafar
+# connection = MongoClient("ds261479.mlab.com", 61479)
+# db = connection["grafar"]
+# db.authenticate("admin", "grafar123")
 
 # Create mongo client
-#mongo_client = MongoClient("localhost", 27017)
+mongo_client = MongoClient("ds261479.mlab.com", 61479)
 
 # Connect to database GrafarDB
-#grafar_db = mongo_client.GrafarDB
+grafar_db = connection["grafar"]
 
 # Connect to graphs document
-#graphs_collection = grafar_db.graphs
+graphs_collection = grafar_db.graphs
 
 
 # root

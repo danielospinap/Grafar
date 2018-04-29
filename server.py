@@ -25,7 +25,9 @@ graphs_collection = grafar_db.graphs
 # root
 @app.route("/")
 def index():
-    return "Grafar is a great application!!"
+    nombre = {"nombre": "jamon"}
+    nombre_id = graphs_collection.insert_one(nombre)
+    return nombre_id
 
 
 # GET

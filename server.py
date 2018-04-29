@@ -18,6 +18,9 @@ mongo_client = MongoClient("ds261479.mlab.com", 61479)
 # Connect to database GrafarDB
 grafar_db = mongo_client["grafar"]
 
+#Authenticate
+grafar_db.authenticate("admin", "grafar123")
+
 # Connect to graphs document
 graphs_collection = grafar_db.graphs
 
@@ -25,9 +28,7 @@ graphs_collection = grafar_db.graphs
 # root
 @app.route("/")
 def index():
-    nombre = {"nombre": "jamon"}
-    nombre_id = graphs_collection.insert_one(nombre)
-    return nombre_id
+    return "Grafar is a great application!!"
 
 
 # GET

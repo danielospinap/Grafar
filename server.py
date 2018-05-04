@@ -45,6 +45,7 @@ def get_api():
 # POST
 @app.route("/api/data", methods=["POST"])
 def get_function():
+    str(request)
     json = request.get_json()
     print(json)
     if len(json["function"]) == 0:
